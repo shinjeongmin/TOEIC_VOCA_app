@@ -10,12 +10,14 @@ public class VocabularyFormat
     public string vocabulary;
     public string meaning;
     public CheckClear check;
+    public string day;
 
-    public VocabularyFormat(int _index, string _vocabulary,string _meaning, CheckClear _check)
+    public VocabularyFormat(string _index, string _vocabulary,string _meaning, string _check, string _day)
     {
-        index = _index;
+        index = int.Parse(_index);
         vocabulary = _vocabulary;
         meaning = _meaning;
-        check = _check;
+        check = (VocabularyFormat.CheckClear)int.Parse(_check);
+        day = _day;
     }
 }

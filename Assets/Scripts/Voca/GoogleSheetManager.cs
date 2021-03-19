@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class GoogleSheetManager : MonoBehaviour
 {
-    const string URL = "https://docs.google.com/spreadsheets/d/1ltFxS1DMgJx_frkA7nLJFRx0uVQxyBeZGHam2iUXgBU/export?format=tsv&range=A2:D";
+    const string URL = "https://docs.google.com/spreadsheets/d/1ltFxS1DMgJx_frkA7nLJFRx0uVQxyBeZGHam2iUXgBU/export?format=tsv&range=A2:E";
 
     public UnityEvent onUIManager_Initialize;
     public UnityEvent onCheckVocalLists2Inspector;
