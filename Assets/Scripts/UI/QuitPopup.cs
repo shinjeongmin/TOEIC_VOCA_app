@@ -4,20 +4,20 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //종료 팝업에 대한 CS
-public class QuitPopup : MonoBehaviour//QuitPopup class 정의?
+public class QuitPopup : MonoBehaviour//QuitPopup class 정의? + Mono를 상속받음, Update() 를 매 프레임마다 호출하게 됨.
 {
     public GameObject Popup_Quit;//Popup_Quit 게임 내 오브젝트 생성
     public GameObject QuitYes;//QuitYes 게임 내 오브젝트 생성(버튼...인건가?)
     public GameObject QuitNo;//QuitNo 게임 내 오브젝트 생성
 
-    private void Start()
+    private void Start()//처음 시작시
     {
         DontDestroyOnLoad(this);//this에 해당하는 것은 씬이 변경되어도 그대로 유지
         QuitYes.GetComponent<Button>().onClick.AddListener(Quit);//QuitYes에 대한 버튼 형식의 클릭 이벤트 설정(끝낸다?)
         QuitNo.GetComponent<Button>().onClick.AddListener(NotQuit);//QuitYes에 대한 버튼 형식의 클릭 이벤트 설정(안 끝낸다?)
     }
 
-    private void Update()
+    private void Update()//프레임마다 반복
     {
 #if UNITY_ANDROID
         if (Application.platform == RuntimePlatform.Android)//이건 음... 무슨의미지(본인의 생각: 안드로이드 환경이면?)
