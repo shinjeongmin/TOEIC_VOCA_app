@@ -13,20 +13,20 @@ public class VocaViewManager : MonoBehaviour //VocaViewManager 정의, 이것도
     public GameObject NextBtn;//오브젝트 선언, 이름이 NextBtn
     public GameObject ViewPanel_day;//오브젝트 선언, 이름이 ViewPanel_day
 
-    public void Initialize()
+    public void Initialize()//시작시?
     {
-        PrevBtn.GetComponent<Button>()
-            .onClick.AddListener(PrevVoca);
-        NextBtn.GetComponent<Button>()
-            .onClick.AddListener(NextVoca);
-        SetVoca2ViewPanel();
-        InitVocaDay();
+        PrevBtn.GetComponent<Button>()//아까 선언한 오브젝트 PrevBtn에게 버튼 컴포넌트를 부여한다
+            .onClick.AddListener(PrevVoca);//클릭 이벤트는 PrevVoca 실행
+        NextBtn.GetComponent<Button>()//아까 선언한 오브젝트 PrevBtn에게 버튼 컴포넌트를 부여한다
+            .onClick.AddListener(NextVoca);//클릭 이벤트는 NextVoca 실행
+        SetVoca2ViewPanel();//SetVoca2ViewPanel()를 실행
+        InitVocaDay();//InitVocaDay()를 실행
     }
 
     private void SetVoca2ViewPanel()
     {
         // 단어 및 뜻 설정
-        ViewPanel_voca.GetComponent<Text>().text
+        ViewPanel_voca.GetComponent<Text>().text//아까 선언한 오브젝트 ViewPanel_voca에게 텍스트 컴포넌트를 부여한다
             = VocabularyDataBase.GetVocabularyLists()[curVocaIdx].vocabulary;
         ViewPanel_mean.GetComponent<Text>().text
             = VocabularyDataBase.GetVocabularyLists()[curVocaIdx].meaning;
