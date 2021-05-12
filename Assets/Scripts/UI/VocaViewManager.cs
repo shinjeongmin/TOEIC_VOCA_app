@@ -45,14 +45,14 @@ public class VocaViewManager : MonoBehaviour //VocaViewManager 정의, 이것도
             // 엑셀의 빈칸의 경우 비어있지는 않은 공백으로 판단됨
             if (string.IsNullOrWhiteSpace(VocabularyDataBase.GetVocabularyDay(i)))//만약 GetVocabularyDay(i)의 단어가 공백이라면
             {
-                VocabularyDataBase.SetVocabularyDay(i, VocabularyDataBase.GetVocabularyDay(i - 1));//i를 VocabularyDataBase.GetVocabularyDay(i - 1)로 바꿔줌
+                VocabularyDataBase.SetVocabularyDay(i, VocabularyDataBase.GetVocabularyDay(i - 1));//이전 index를 가져옴 그러니까 day1아래부터는 공백인데 그걸 다 채워줌
             }
         }
     }
 
     private void NextVoca()
     {
-        try
+        try//예외 구문:오류가 나도 실행시켜 주는 try
         {
             curVocaIdx++;
             SetVoca2ViewPanel();//단어를 다시가져오는 건가??
